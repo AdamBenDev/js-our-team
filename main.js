@@ -45,3 +45,16 @@ teamMembers.forEach((member) => {
     `Nome: ${member.nome}, Ruolo: ${member.ruolo}, Foto: ${member.foto}`
   );
 });
+
+// Stampo delle informazioni sulla DOM
+
+const container = document.querySelector("team-container");
+teamMembers.forEach(member => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    const name = document.createElement("h3");
+    name.textContent = member.nome;
+
+    
+})
