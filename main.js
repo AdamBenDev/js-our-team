@@ -9,7 +9,7 @@ const teamMembers = [
   {
     nome: "Wayne Barnett",
     ruolo: "Founder & CEO",
-    foto: "wayne-barnett-founder-ceo.jpg",
+    foto: "img/wayne-barnett-founder-ceo.jpg " ,
   },
   {
     nome: "Angela Caroll",
@@ -40,7 +40,7 @@ const teamMembers = [
 
 //Stampa delle informazioni sulla console
 
-teamMembers.forEach((member) => {
+teamMembers.forEach(member => {
   console.log(
     `Nome: ${member.nome}, Ruolo: ${member.ruolo}, Foto: ${member.foto}`
   );
@@ -48,7 +48,7 @@ teamMembers.forEach((member) => {
 
 // Stampo delle informazioni sulla DOM
 
-const container = document.querySelector("team-container");
+const container = document.querySelector("#team-container");
 teamMembers.forEach(member => {
     const card = document.createElement("div");
     card.classList.add("card");
@@ -56,5 +56,18 @@ teamMembers.forEach(member => {
     const name = document.createElement("h3");
     name.textContent = member.nome;
 
-    
-})
+    const role = document.createElement("p");
+    role.textContent = member.ruolo;
+
+    const image = document.createElement("img");
+    image.src = member.foto;
+    image.alt = member.nome;
+
+    card.appendChild(image);
+    card.appendChild(name);
+    card.appendChild(role);
+
+    container.appendChild(card);
+
+
+});
